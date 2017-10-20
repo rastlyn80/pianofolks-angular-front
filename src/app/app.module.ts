@@ -9,17 +9,21 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    AuthDialogComponent
+    AuthDialogComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     NgbModule.forRoot(),
     AppRoutingModule
   ],

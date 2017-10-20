@@ -11,10 +11,9 @@ export class NavbarComponent implements OnInit {
 
   @ViewChild('authDialog') authDialog: AuthDialogComponent;
 
-  constructor(public tokenAuthService:Angular2TokenService) { }
+  constructor(public tokenAuthService:Angular2TokenService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   open(mode?: 'login'|'register') {
     this.authDialog.open(mode);

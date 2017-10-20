@@ -13,7 +13,7 @@
         <a class="nav-link" (click)="open('login')">Login</a>
       </li>
       <li ngbDropdown class="nav-item dropdown">
-        <a *ngIf="tokenAuthService.userSignedIn()" ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PROFILE NAME</a>
+        <a *ngIf="tokenAuthService.userSignedIn()" ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USERNAME CALL GOES HERE</a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" href="#">Profile</a>
           <a class="dropdown-item" (click)="tokenAuthService.signOut()">Logout</a>
