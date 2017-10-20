@@ -7,16 +7,16 @@
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Register</a>
+        <a *ngIf="!tokenAuthService.userSignedIn()" class="nav-link" (click)="open('register')">Register</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
+      <li *ngIf="!tokenAuthService.userSignedIn()" class="nav-item">
+        <a class="nav-link" (click)="open('login')">Login</a>
       </li>
       <li ngbDropdown class="nav-item dropdown">
-        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PROFILE NAME</a>
+        <a *ngIf="tokenAuthService.userSignedIn()" ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PROFILE NAME</a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" href="#">Profile</a>
-          <a class="dropdown-item" href="#">Logout</a>
+          <a class="dropdown-item" (click)="tokenAuthService.signOut()">Logout</a>
         </div>
       </li>
     </ul>
@@ -26,3 +26,5 @@
     </form>
   </div>
 </nav>
+
+<app-auth-dialog #authDialog></app-auth-dialog>

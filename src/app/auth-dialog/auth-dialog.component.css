@@ -1,0 +1,9 @@
+a.modal-link {
+    color: blue;
+    text-decoration: underline;
+}
+a.modal-link:hover {
+    color: darkblue;
+    text-decoration: underline;
+    cursor: pointer;
+}

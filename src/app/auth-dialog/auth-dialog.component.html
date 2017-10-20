@@ -1,0 +1,23 @@
+<ng-template #modalform let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 *ngIf="isLoginMode()" class="modal-title">Login</h4>
+    <h4 *ngIf="isRegisterMode()" class="modal-title">Register</h4>    
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Current mode: {{ authMode }}</p>
+
+    <p *ngIf="isLoginMode()">
+      Need an account? <a class="modal-link" (click)="authMode='register'">Click here to register.</a>
+    </p>
+
+    <p *ngIf="isRegisterMode()">
+      Already have an account? <a class="modal-link" (click)="authMode='login'">Click here to login.</a>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
