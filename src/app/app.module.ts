@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
@@ -30,7 +31,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     AppRoutingModule
   ],
   providers: [ Angular2TokenService,
-    NgbActiveModal ],
+    NgbActiveModal, AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

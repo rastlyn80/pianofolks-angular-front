@@ -1,6 +1,7 @@
-import { Angular2TokenService } from 'angular2-token';
+import { AuthService } from './../services/auth.service';
 import { AuthDialogComponent } from './../auth-dialog/auth-dialog.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -11,9 +12,14 @@ export class NavbarComponent implements OnInit {
 
   @ViewChild('authDialog') authDialog: AuthDialogComponent;
 
-  constructor(public tokenAuthService:Angular2TokenService) {}
-
-  ngOnInit() {}
+  constructor(public authService:AuthService, private router:Router) {}
+  
+    ngOnInit(){}
+  
+    logOut(){
+      this.authService.logOutUser().subscribe(() => this.router.navigate(['/']));
+    }
+  
 
   open(mode?: 'login'|'register') {
     this.authDialog.open(mode);
