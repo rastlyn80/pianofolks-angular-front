@@ -13,6 +13,7 @@ import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     NavbarComponent,
     AuthDialogComponent,
     LoginFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
