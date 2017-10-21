@@ -15,22 +15,27 @@ export class AuthDialogComponent implements OnInit {
 
   constructor(private modalService: NgbModal) { }
   modalReference: any; 
-  result: any; // *** Probably to refactor on a service! ***
-  user_name: string; // *** Probably to refactor on a service! ***
+
 
   onLoginFormResult(e){
     
-    if(e.signedIn) {
-      this.result = JSON.parse(e.res._body);
-      this.user_name = this.result.data.name; // *** Just experimental, REFECTOR!!!! ***
-      // console.log("Result: " + JSON.stringify(this.result));
-      // console.log("Type:" + this.user_name);    
-      
+    if(e.signedIn) {      
       this.modalReference.close();
     }
 
     else {
       alert(e.err.json().errors[0])
+    }
+  }
+
+  onRegisterFormResult(e){
+    
+    if(e.signedUp) {      
+      this.modalReference.close();
+    }
+
+    else {
+      alert(e.err.json().errors.full_messages[0])
     }
   }
 

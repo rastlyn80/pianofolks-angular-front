@@ -8,6 +8,7 @@
   <div class="modal-body">
     <div class="row">
         <app-login-form (onFormResult)="onLoginFormResult($event)" *ngIf="isLoginMode()"></app-login-form>
+        <app-register-form (onFormResult)="onRegisterFormResult($event)" *ngIf="isRegisterMode()"></app-register-form>
     </div>
     <p>Current mode: {{ authMode }}</p>
 
