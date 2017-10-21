@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
+  public isCollapsed = true;  
+
   @ViewChild('authDialog') authDialog: AuthDialogComponent;
 
   constructor(public authService:AuthService, public authTokenService:Angular2TokenService, private router:Router) {} 
